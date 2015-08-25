@@ -27,7 +27,7 @@ namespace SLIRC
             this.Server = server;
             this.Port = port;
             this.Nickname = nick;
-            this.Channel = channel.ToUpper();
+            this.Channel = channel;
             this.User = String.Format("USER {0} 8 * : {1}", user, botm);
             this.UserList = new List<string>();
         }
@@ -95,13 +95,23 @@ namespace SLIRC
 
             if (input.Contains(split))
             {
+                var usern = input.Split(':')[1].Split('~')[0];
                 var cmd_s = input.Split(new string[] { split }, StringSplitOptions.None)[1];
                 var args_ = cmd_s.Split(' ');
                 var args = args_.Skip(1).Take(args_.Length - 1).ToArray();
                 var cmd = args_[0];
 
+                /* Disabled for now.
+                
+                if (cmd == "+commands")
+                {
+                    foreach (var msg in ircc.Commands(usern)) {
+                        Send(wtr, msg);
+                    }
+                }
+                 
+                 */
                 var res = ircc.Interpret(cmd, args, userl);
-
                 if (res.Type != IRCType.DONOTHING)
                 {
                     Send(wtr, res);

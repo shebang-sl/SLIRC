@@ -1,6 +1,5 @@
-c:\users\admin\documents\visual studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.exe.config
-c:\users\admin\documents\visual studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.exe
-c:\users\admin\documents\visual studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.pdb
-c:\users\admin\documents\visual studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.csprojResolveAssemblyReference.cache
-c:\users\admin\documents\visual studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.exe
-c:\users\admin\documents\visual studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.exe.config
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.exe
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.exe
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.pdb

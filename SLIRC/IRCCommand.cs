@@ -15,6 +15,7 @@ namespace SLIRC
         public string[] UserList { get { return m_users; } set { m_users = value; } }
 
         private Dictionary<string, Func<string[], string[], IRCMessage>> cmds = new Dictionary<string, Func<string[], string[], IRCMessage>>();
+        private Dictionary<string, string> cmds_desc = new Dictionary<string, string>();
 
         public IRCCommand(string channel)
         {
@@ -28,6 +29,19 @@ namespace SLIRC
             cmds["+time"] = Time;
             cmds["+random"] = Rand;
             cmds["+randuser"] = RandUser;
+            cmds["+shout"] = Shout;
+            cmds["+help"] = Help;
+
+            cmds_desc["+add"] = "{0} {1} - Prints {0} + {1}.";
+            cmds_desc["+subtract"] = "{0} {1} - Prints {0} - {1}.";
+            cmds_desc["+multiply"] = "{0} {1} - Prints {0} * {1}.";
+            cmds_desc["+divide"] = "{0} {1} - Prints {0} / {1}.";
+            cmds_desc["+say"] = "{s} - Prints {s}.";
+            cmds_desc["+time"] = "{zone} {diff} - Prints time in timezone {zone}, modified by {diff}.";
+            cmds_desc["+random"] = "{0} {1} - Prints a random number in the interval [{0},{1}).";
+            cmds_desc["+randuser"] = "Prints a random nickname.";
+            cmds_desc["+shout"] = "{s} - Shouts {s}.";
+            cmds_desc["+help"] = "{s} - Prints help message for command {s}.";
         }
 
         public IRCMessage Interpret(string cmd, string[] args, string[] userl)
@@ -170,6 +184,33 @@ namespace SLIRC
             var r = new Random();
             var i = r.Next(0, userl.Length);
             return new IRCMessage(IRCType.PRIVMSG, this.Channel, String.Format("I have randomly selected {0}.", userl[i]));
+        }
+
+        public IRCMessage Shout(string[] args, string[] userl)
+        {
+            return new IRCMessage(IRCType.PRIVMSG, this.Channel, String.Join(" ", args).ToUpper() + "!");
+        }
+
+        public IRCMessage Help(string[] args, string[] userl)
+        {
+            var c = "";
+            if (args.Length >= 1 && args[0].StartsWith("+")) {
+                c = args[0];
+            } else if (args.Length >= 1) {
+                c = "+" + args[0];
+            }
+            else
+            {
+                return new IRCMessage(IRCType.PRIVMSG, this.Channel, String.Join(" ", "+help", cmds_desc["+help"]));
+            }
+            if (cmds_desc.ContainsKey(c))
+            {
+                return new IRCMessage(IRCType.PRIVMSG, this.Channel, String.Join(" ", c, cmds_desc[c]));
+            }
+            else
+            {
+                return new IRCMessage(IRCType.DONOTHING, this.Channel, "Do nothing!");
+            }
         }
     }
 }

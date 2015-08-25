@@ -10,7 +10,7 @@ namespace SLIRC
     {
         static void Main(string[] args)
         {
-            var irc = new IRC("infallible.io", 6667, "ShebangBot", "ShebangBot", "#SL");
+            var irc = new IRC("infallible.io", 6667, "ShebangBot", "ShebangBot", "+test");
             irc.Connect();
         }
     }
