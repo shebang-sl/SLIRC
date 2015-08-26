@@ -117,6 +117,10 @@ namespace SLIRC
                     Send(wtr, res);
                 }
             }
+            else if (input.Contains("PING"))
+            {
+                Send(wtr, new IRCMessage(IRCType.PONG, Server));
+            }
         }
 
         public void Send(StreamWriter wtr, string msg)

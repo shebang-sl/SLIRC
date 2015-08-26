@@ -10,7 +10,9 @@ namespace SLIRC
     {
         static void Main(string[] args)
         {
-            var irc = new IRC("infallible.io", 6667, "ShebangBot", "ShebangBot", "+test");
+            Console.Write("Channel: ");
+            var chan = Console.ReadLine();
+            var irc = new IRC("infallible.io", 6667, "ShebangBot", "ShebangBot", chan);
             irc.Connect();
         }
     }

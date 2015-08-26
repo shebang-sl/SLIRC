@@ -8,5 +8,6 @@
         public const string DONOTHING = "DONOTHING";
         public const string NAMES = "NAMES";
         public const string MSG = "MSG";
+        public const string PONG = "PONG";
     }
 }

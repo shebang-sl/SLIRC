@@ -3,3 +3,8 @@ C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\bin\Debug\SLIRC.pdb
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.exe
 C:\Users\Admin\Documents\Visual Studio 2013\Projects\SLIRC\SLIRC\obj\Debug\SLIRC.pdb
+C:\Users\Admin\Documents\GitHub\SLIRC\SLIRC\bin\Debug\SLIRC.exe.config
+C:\Users\Admin\Documents\GitHub\SLIRC\SLIRC\bin\Debug\SLIRC.exe
+C:\Users\Admin\Documents\GitHub\SLIRC\SLIRC\bin\Debug\SLIRC.pdb
+C:\Users\Admin\Documents\GitHub\SLIRC\SLIRC\obj\Debug\SLIRC.exe
+C:\Users\Admin\Documents\GitHub\SLIRC\SLIRC\obj\Debug\SLIRC.pdb
